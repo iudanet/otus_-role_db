@@ -6,6 +6,7 @@
       - ca-certificates
       - gnupg
       - libssl-dev
+      - python-apt
     update_cache: yes
 
 - name: add apt key
