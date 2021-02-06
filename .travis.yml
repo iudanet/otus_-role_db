@@ -1,32 +1,17 @@
----
 language: python
-python: "2.7"
-
-# Use the new container infrastructure
+python: '2.7'
 sudo: false
-
-# Install ansible
 addons:
   apt:
     packages:
     - python-pip
-
 install:
-  # Install ansible
-  - pip install ansible
-
-  # Check ansible version
-  - ansible --version
-
-  # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
-
+- pip install ansible
+- ansible --version
+- printf '[defaults]\nroles_path=../' >ansible.cfg
 script:
-  # Basic role syntax check
-  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
-
+- ansible-playbook tests/test.yml -i tests/inventory --syntax-check
 notifications:
   slack:
     rooms:
-      secure: U1EDObuhJcAA17qsFfr3ZJK3OmGduAZz4Yfj9TpgpbKEMx6zTREs0HfzMFfJAOOVn2kUtjfitvnXZVtWtl91zbiRsrMeRKmOw5ZCiEL4XquHhRD0z5vvhl3WYGA7Rh9ar5NJXUs1AmeByqsPjnRkucyf5pq1YXiSNHEWlCSMxZHsJL+mS1fcFD4AeDMBVb244Wz4Q/lZktGPtwV1oJ7RkVOB9sx7iGbXV3cqy2oN/QLnz5LV9a8+EoosLsQdLkEhBIhcnWjLTRXMNNoYMDoE2imGOH4iIBC7aZkYPLbpvtB+nCJfgJP+BzKekoLgaVKy5doVNgWLxyNikLecI6W+ckw7hm/Fjo/uXVNYfW39rcPTljCR3uBIzNq9u2ISpqbYHsn1we4K5t/7pUOl4VeV7kZtGhzPEyIixKbjB+ADG1yXhSsZj512GfHSYVt39LRGhsrBvENwYYgYPDQPW+6bxmtgY/l4SCil8bsEYSB4NOkoBfnTVaRh5jXwKgp9gVkucuy6reL9TYD0B5u1Wr7PqsZ/isv0Pbm4mfyXE6k+egm3flC51RM/x6Ka2qVeHfgMRERnqhBWD1/R5i2LZO+bsSSrAttI/02SiYm+7JlZd3YDJJy1BABGm+z9ENiysIsEHQui9PXoHfrHitPXs0/e+0nDGDSGFF9z1OkDYcUVuUc=
-
+      secure: fjWayANYpBPrwsIwZ6cL7dzzCWGw5E3VhXbrJRiStX6NMb54dAZlwRDfZPO5WX48gS7HPCxEZ9vnWMPJ5Z+46ecZ/Rln0lJLPJvcimyPnGan1ZSL7nIkXuXUk8MGI49m7f16hGOrHWC04tqytIrv0AfFhg9LV6LIrPVNDe9GrQqsIUT8F53H5QN5VzZkkaV3K7rbeL0x5FxLKx3SjyvjRXpAVU/UiNT7OTsfgSwfn9mw8Qk1dh+iDE11OToBOyeSJyuRcv0Lu+R3xP3jyLywfg3lRz21H7Y3hkWgPu9hPChd/VunCCHVaLigphYLRdTInoN4ZQHcuUEdiFRMRdCNdNVOwXWUDFnGf47PA/NqTsDvnuG5WAG19wX6pa724CZRvYohI/KH9/08OcGEdkCthnP1fa3h1yKspbbEJ8JIpPO22x94PPJ3HGHSLMUy69T9MNwx5U/przPjEhL8lRk07fybM9BHGP20WbYMsPW0s+nDMbdBiJVoLVV5CkbnPS1Vu5yPyRZ5MnKK4E1ba662K9IlPDHoxImXiukpS0b9qux9j9KakIb6itjEX4hnluGUjSUhyH3bac+0ehUaFhAS3rKYQkVYtJ0BFhPOA7LmQnclTlExU7UlgSnAt7o4hvweBEIm15wp3frgKJyW8fFp5dQDQp0CDX9bw5J4GfyM1oU=
