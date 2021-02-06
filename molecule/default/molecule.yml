@@ -13,22 +13,22 @@ driver:
 #     box: ubuntu/xenial64
 platforms:
   - name: instance
-    image: ubuntu:1604
-    privileged: true
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:rw
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    # command: /sbin/init
-    capabilities:
-      - SYS_ADMIN
-    # exposed_ports:
-    #   - 80/udp
-    #   - 80/tcp
-    # published_ports:
-    #   - 0.0.0.0:8888:80/udp
-    #   - 0.0.0.0:8888:80/tcp
-    # groups:
-    #   - debian
+    image: ubuntu:16.04
+    # privileged: true
+    # volumes:
+    #   - /var/run/docker.sock:/var/run/docker.sock:rw
+    #   - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    # # command: /sbin/init
+    # capabilities:
+    #   - SYS_ADMIN
+    # # exposed_ports:
+    # #   - 80/udp
+    # #   - 80/tcp
+    # # published_ports:
+    # #   - 0.0.0.0:8888:80/udp
+    # #   - 0.0.0.0:8888:80/tcp
+    # # groups:
+    # #   - debian
 provisioner:
   name: ansible
   lint:

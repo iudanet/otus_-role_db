@@ -1,5 +1,8 @@
 ---
-- hosts: localhost
-  remote_user: root
+- name: Converge
+  hosts: all
+  become: true
+  vars:
+    mongo_bind_ip: 0.0.0.0
   roles:
-    - db
+    - role: otus_role_db
